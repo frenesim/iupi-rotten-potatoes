@@ -4,9 +4,9 @@
 %table#movies
   %thead
     %tr
-      %th= sortable "title","Movie Title"
+      %th{:class => "#{set_th_class "title"}"}= sortable "title","Movie Title"
       %th Rating
-      %th= sortable "release_date","Release Date" 
+      %th{:class => "#{set_th_class "release_date"}"}= sortable "release_date","Release Date" 
       %th More Info
   %tbody
     - @movies.each do |movie|
