@@ -3,11 +3,12 @@ module MoviesHelper
   def oddness(count)
     count.odd? ?  "odd" :  "even"
   end
-  def sortable(column,title=nil)
+  
+  def sortable(column,title=nil,css_id)
     title||=column.titleize
-    css_class = column == params[:sort] ? "hilite" : nil
-    link_to title, {:sort=>column},{:class=>css_class}
+    link_to title, {:sort=>column},{:id=>css_id}
   end
+  
   def set_th_class(column)
     column == params[:sort] ? "hilite" : nil
   end
