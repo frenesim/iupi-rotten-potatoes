@@ -5,15 +5,15 @@
   Include:
   - @all_ratings.each do |rating|
     = rating
-    = check_box_tag "ratings[#{rating}]"
+    = check_box_tag "ratings[#{rating}]" , 1, @checked.include?(rating) && @all_ratings.length != @checked.length
   = submit_tag 'Refresh'
   
 %table#movies
   %thead
     %tr
-      %th{:class => "#{set_th_class "title"}"}= sortable "title","Movie Title","title_header"
+      %th{:class => "#{set_th_class "title"}"}= sortable "title","Movie Title","title_header", @checked
       %th Rating
-      %th{:class => "#{set_th_class "release_date"}"}= sortable "release_date","Release Date" ,"release_date_header"
+      %th{:class => "#{set_th_class "release_date"}"}= sortable "release_date","Release Date" ,"release_date_header",@checked
       %th More Info
   %tbody
     - @movies.each do |movie|

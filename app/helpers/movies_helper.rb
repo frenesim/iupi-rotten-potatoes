@@ -4,9 +4,11 @@ module MoviesHelper
     count.odd? ?  "odd" :  "even"
   end
   
-  def sortable(column,title=nil,css_id)
+  def sortable(column,title=nil,css_id,checked)
     title||=column.titleize
-    link_to title, {:sort=>column},{:id=>css_id}
+    checks = Hash.new
+    checked.each{|c| checks[c]=1}
+    link_to title, {:sort=>column}.merge({"ratings"=>checks}),{:id=>css_id}
   end
   
   def set_th_class(column)
