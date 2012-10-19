@@ -11,8 +11,8 @@ tmp/
 /vendor/bundle/
 
 # gemfiles
-/.Gemfile
-/.Gemfile.lock
+Gemfile
+Gemfile.lock
 
 # aptana project
 /.project
