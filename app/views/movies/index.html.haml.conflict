@@ -6,7 +6,11 @@
   - @all_ratings.each do |rating|
     = rating
     = check_box_tag "ratings[#{rating}]" , 1, @checked.include?(rating) #&& @all_ratings.length != @checked.length
+<<<<<<< HEAD
+  = submit_tag 'Refresh'
+=======
   = submit_tag 'Refresh',:id=>"ratings_submit"
+>>>>>>> 8ec0a469f7ca5b5adc22a49248c256f137bc3d1b
   
 %table#movies
   %thead
