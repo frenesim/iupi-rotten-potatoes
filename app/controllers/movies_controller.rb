@@ -8,7 +8,6 @@ class MoviesController < ApplicationController
 
   def index
     @all_ratings =Movie.select(:rating).map(&:rating).uniq
-    #debugger
     @checked = params["ratings"] ? params["ratings"].keys : @all_ratings
     @movies = Movie.where(:rating=>@checked).order(params[:sort])
   end
